@@ -1,0 +1,12 @@
+﻿@page
+@model blog.Pages.admin.IndexModel
+@{
+}
+
+
+<ul>
+    @foreach (var item in Model.Users)
+    {
+        <li>@item.Username</li>
+    }
+</ul>
