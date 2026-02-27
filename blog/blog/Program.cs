@@ -1,5 +1,6 @@
 using blog.Data;
 using blog.services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -13,6 +14,15 @@ options.UseSqlServer(
   builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().
+  AddEntityFrameworkStores<AppDbContext>().
+  AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+  options.LoginPath = "Auth/Login";  
+});
 
 var app = builder.Build();
 

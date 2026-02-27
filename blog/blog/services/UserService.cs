@@ -1,5 +1,4 @@
 ﻿using blog.Data;
-using blog.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace blog.services
@@ -11,9 +10,9 @@ namespace blog.services
     {
       _context = context;
     }
-    public async Task<List<User>> GetAll()
-    {
-      return await _context.Users.ToListAsync();
-    }
+    //public async Task<List<User>> GetAll()
+    //{
+    //  return await _context.Users.ToListAsync();
+    //}
   }
 }

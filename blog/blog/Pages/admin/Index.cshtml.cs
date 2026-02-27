@@ -1,4 +1,3 @@
-using blog.Models;
 using blog.services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,11 +12,10 @@ namespace blog.Pages.admin
       _userService = userService;
     }
 
-    public List<User> Users { get; set; }
     public async Task OnGetAsync()
     
     {
-      Users = await _userService.GetAll();
+      //Users = await _userService.GetAll();
     }
   }
 }
